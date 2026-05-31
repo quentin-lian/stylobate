@@ -1,6 +1,6 @@
 # 发布手册
 
-`@plinth/*` 系列包的发布全流程。本手册的一切都假设你站在 `quentin-lian/plinth` 仓库的 `main` 分支，且本地一切 gate 全绿。
+`@stylobate/*` 系列包的发布全流程。本手册的一切都假设你站在 `quentin-lian/plinth` 仓库的 `main` 分支，且本地一切 gate 全绿。
 
 ---
 
@@ -34,11 +34,11 @@
 1. 打开 https://www.npmjs.com/signup 注册账号
 2. 启用 2FA：Account → Set up Two-Factor Authentication（强烈推荐 `Authorization and Publishing` 级别）
 3. 验证邮箱
-4. 验证 scope `@plinth` 未被占用：
+4. 验证 scope `@stylobate` 未被占用：
 
    ```bash
-   npm view @plinth/utils
-   # 期望输出 "404 Not Found - GET https://registry.npmjs.org/@plinth%2futils"
+   npm view @stylobate/utils
+   # 期望输出 "404 Not Found - GET https://registry.npmjs.org/@stylobate%2futils"
    ```
 
    404 = 可用。如果返回了别人的包，需要换 scope（参考路线图调整决策）。
@@ -49,7 +49,7 @@
 2. **Generate New Token → Granular Access Token**（推荐，比 Classic 安全）
    - **Token name**：`plinth-ci`
    - **Expiration**：365 天（到期前 30 天会有邮件提醒）
-   - **Packages and scopes** → `@plinth` 全部 read+write
+   - **Packages and scopes** → `@stylobate` 全部 read+write
    - **IP allowlist**：留空（GitHub Actions IP 不固定）
    - **Bypass 2FA**：✅ 勾上（Automation token 必须勾，否则 CI 会卡 2FA 提示）
 3. 复制 token（`npm_xxxxx`），关掉页面后看不到第二次
@@ -106,7 +106,7 @@ CI 在 `main` 推送后会自动跑 `.github/workflows/release.yml`，发现 `.c
 2. changesets/action 检测到没有未发布 changeset 了
 3. 走 publish 分支：执行 `pnpm release`
    = `turbo run build --filter=./packages/* && changeset publish`
-4. 9 个包用 NPM_TOKEN 发到 npm，每个发 git tag（如 @plinth/utils@0.1.0）
+4. 9 个包用 NPM_TOKEN 发到 npm，每个发 git tag（如 @stylobate/utils@0.1.0）
 ```
 
 ### 2.4 验证发布
@@ -115,8 +115,8 @@ CI 在 `main` 推送后会自动跑 `.github/workflows/release.yml`，发现 `.c
 # 查包是否都到了
 for pkg in eslint-config prettier-config prettier-config-tailwind typescript-config \
            test-config commitlint-config utils api-client env; do
-  echo -n "@plinth/$pkg: "
-  npm view "@plinth/$pkg" version 2>/dev/null || echo "MISSING"
+  echo -n "@stylobate/$pkg: "
+  npm view "@stylobate/$pkg" version 2>/dev/null || echo "MISSING"
 done
 
 # 期望全部输出 0.1.0
@@ -126,14 +126,14 @@ done
 # 在临时目录拉一下，确认能装
 mkdir /tmp/plinth-smoke && cd /tmp/plinth-smoke
 npm init -y >/dev/null
-npm install @plinth/utils @plinth/api-client @plinth/env zod
-node -e "console.log(require('@plinth/utils'))"
+npm install @stylobate/utils @stylobate/api-client @stylobate/env zod
+node -e "console.log(require('@stylobate/utils'))"
 ```
 
-不过 — `@plinth/utils` 是 ESM-only 包（`type: module`），node 命令行用 `import()` 或 `.mjs` 文件验证：
+不过 — `@stylobate/utils` 是 ESM-only 包（`type: module`），node 命令行用 `import()` 或 `.mjs` 文件验证：
 
 ```bash
-node --input-type=module -e "import('@plinth/utils').then(m => console.log(Object.keys(m)))"
+node --input-type=module -e "import('@stylobate/utils').then(m => console.log(Object.keys(m)))"
 ```
 
 ---
@@ -167,10 +167,10 @@ npm 包发出去 72 小时内可用 `npm unpublish`，超过 72 小时只能 `np
 
 ```bash
 # 立刻撤回（72h 内）
-npm unpublish @plinth/utils@0.2.1
+npm unpublish @stylobate/utils@0.2.1
 
 # 或者标记为废弃（任何时候）
-npm deprecate @plinth/utils@0.2.1 "broken release, please use 0.2.2+"
+npm deprecate @stylobate/utils@0.2.1 "broken release, please use 0.2.2+"
 ```
 
 回滚后立刻发一个修复版本盖上去。
@@ -198,8 +198,8 @@ A: 检查三件事：
 **Q: CI 报 `npm error 401 Unauthorized`？**
 A: `NPM_TOKEN` 没设、过期、或不是 Automation token。Granular token 必须勾 "Bypass 2FA"。
 
-**Q: CI 报 `npm error 403 Forbidden - PUT https://registry.npmjs.org/@plinth%2fxxx`？**
-A: scope `@plinth` 不属于你的 npm 账号 / 没勾这个 scope 的 read+write 权限。回到 1.2 重发 token。
+**Q: CI 报 `npm error 403 Forbidden - PUT https://registry.npmjs.org/@stylobate%2fxxx`？**
+A: scope `@stylobate` 不属于你的 npm 账号 / 没勾这个 scope 的 read+write 权限。回到 1.2 重发 token。
 
 **Q: CI 报 `EPUBLISHCONFLICT`？**
 A: 当前版本号已被发布过。可能是：
@@ -229,7 +229,7 @@ pnpm changeset pre exit  # 完成 beta，下次发正式版
 
 ```md
 - [ ] npm 账号已注册 + 2FA 已开
-- [ ] `npm view @plinth/utils` 返回 404（scope 未被占用）
+- [ ] `npm view @stylobate/utils` 返回 404（scope 未被占用）
 - [ ] `NPM_TOKEN` 已加到 repo secrets，且 Bypass 2FA
 - [ ] Workflow permissions = Read and write + 允许 PR
 - [ ] 本地 `pnpm changeset status --verbose` 显示 9 包升到 0.1.0
@@ -238,7 +238,7 @@ pnpm changeset pre exit  # 完成 beta，下次发正式版
 - [ ] release.yml 触发并自动开 Release PR
 - [ ] Release PR 合入
 - [ ] release.yml 二次运行，9 包发布成功
-- [ ] `npm view @plinth/utils version` = 0.1.0
-- [ ] 临时目录 `npm install @plinth/utils` 成功
+- [ ] `npm view @stylobate/utils version` = 0.1.0
+- [ ] 临时目录 `npm install @stylobate/utils` 成功
 - [ ] 试点业务项目按 [CONSUMING.md](./CONSUMING.md) 接入跑通
 ```

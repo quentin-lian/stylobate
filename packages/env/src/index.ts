@@ -52,7 +52,7 @@ type Merge<A, B> = { [K in keyof A]: A[K] } & { [K in keyof B]: B[K] };
  * @example
  * ```ts
  * import { z } from 'zod';
- * import { createEnv } from '@plinth/env';
+ * import { createEnv } from '@stylobate/env';
  *
  * export const env = createEnv({
  *   server: z.object({

@@ -1,4 +1,4 @@
-import nextConfig from '@plinth/eslint-config/next';
+import nextConfig from '@stylobate/eslint-config/next';
 
 /** @type {import("eslint").Linter.Config[]} */
 export default nextConfig;

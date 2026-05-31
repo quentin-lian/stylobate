@@ -2,12 +2,12 @@
 
 ## 报告安全漏洞
 
-如果你在 `plinth` 仓库或任何 `@plinth/*` 包中发现安全漏洞，**请不要在公开 issue 里披露**。
+如果你在 `plinth` 仓库或任何 `@stylobate/*` 包中发现安全漏洞，**请不要在公开 issue 里披露**。
 
 请通过以下任一方式私下报告：
 
 - **首选**：在 GitHub 仓库使用 [Private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)
-- **备选**：发邮件到 `security@plinth.example.com`（待确认真实邮箱后替换）
+- **备选**：发邮件到 `security@stylobate.example.com`（待确认真实邮箱后替换）
 
 请在报告中包含：
 
@@ -33,13 +33,13 @@
 
 只有最新 **major.minor** 版本会持续接收安全修复。老版本请尽快升级。
 
-| 包          | 当前支持版本 |
-| ----------- | ------------ |
-| `@plinth/*` | 最新 minor   |
+| 包             | 当前支持版本 |
+| -------------- | ------------ |
+| `@stylobate/*` | 最新 minor   |
 
 ## 适用范围
 
-本策略仅适用于 `plinth` 仓库本身和它发布的 `@plinth/*` 包。
+本策略仅适用于 `plinth` 仓库本身和它发布的 `@stylobate/*` 包。
 
 第三方依赖（ESLint、Prettier、TypeScript、Vite、Next.js 等）的漏洞请直接向其上游报告，我们会通过 Renovate 跟进升级。
 

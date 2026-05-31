@@ -1,5 +1,5 @@
 {
-  "extends": "@plinth/typescript-config/vue.json",
+  "extends": "@stylobate/typescript-config/vue.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

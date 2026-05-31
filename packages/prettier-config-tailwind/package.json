@@ -1,5 +1,5 @@
 {
-  "name": "@plinth/prettier-config-tailwind",
+  "name": "@stylobate/prettier-config-tailwind",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
@@ -15,7 +15,7 @@
     "prettier": "^3"
   },
   "dependencies": {
-    "@plinth/prettier-config": "workspace:*",
+    "@stylobate/prettier-config": "workspace:*",
     "prettier-plugin-tailwindcss": "^0.6.11"
   },
   "publishConfig": {

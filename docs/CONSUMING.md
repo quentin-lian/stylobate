@@ -1,8 +1,8 @@
 # 业务项目接入指南
 
-把 `@plinth/*` 一组共享配置接到一个新的或已有的业务项目里，3 步即可。
+把 `@stylobate/*` 一组共享配置接到一个新的或已有的业务项目里，3 步即可。
 
-> `@plinth/*` 发布在 **npm 公开 registry**，可见性 **public**。任何人 `pnpm add` 即可装到。无需 token、无需 `.npmrc`。
+> `@stylobate/*` 发布在 **npm 公开 registry**，可见性 **public**。任何人 `pnpm add` 即可装到。无需 token、无需 `.npmrc`。
 
 ---
 
@@ -10,18 +10,18 @@
 
 ```bash
 # 按需选择
-pnpm add -D @plinth/eslint-config @plinth/typescript-config @plinth/prettier-config
+pnpm add -D @stylobate/eslint-config @stylobate/typescript-config @stylobate/prettier-config
 
 # Tailwind 项目额外加：
-pnpm add -D @plinth/prettier-config-tailwind
+pnpm add -D @stylobate/prettier-config-tailwind
 
 # 用 commitlint 的话：
-pnpm add -D @plinth/commitlint-config @commitlint/cli husky
+pnpm add -D @stylobate/commitlint-config @commitlint/cli husky
 
 # 业务运行时（按需）：
-pnpm add @plinth/env zod                    # 环境变量校验
-pnpm add @plinth/api-client                 # HTTP 客户端
-pnpm add @plinth/utils                      # 通用工具
+pnpm add @stylobate/env zod                    # 环境变量校验
+pnpm add @stylobate/api-client                 # HTTP 客户端
+pnpm add @stylobate/utils                      # 通用工具
 ```
 
 同时安装对应 peer：
@@ -40,19 +40,19 @@ pnpm add -D eslint typescript prettier
 
 ```js
 // Next.js 项目
-import config from '@plinth/eslint-config/next';
+import config from '@stylobate/eslint-config/next';
 export default config;
 
 // 普通 React 项目
-import config from '@plinth/eslint-config/react';
+import config from '@stylobate/eslint-config/react';
 export default config;
 
 // Vue 3 项目
-import config from '@plinth/eslint-config/vue';
+import config from '@stylobate/eslint-config/vue';
 export default config;
 
 // Node.js 服务/工具
-import config from '@plinth/eslint-config/node';
+import config from '@stylobate/eslint-config/node';
 export default config;
 ```
 
@@ -63,12 +63,12 @@ export default config;
 ```jsonc
 {
   // 按项目类型选一个
-  "extends": "@plinth/typescript-config/nextjs.json",
-  // "extends": "@plinth/typescript-config/react.json",
-  // "extends": "@plinth/typescript-config/react-library.json",
-  // "extends": "@plinth/typescript-config/vue.json",
-  // "extends": "@plinth/typescript-config/nuxt.json",
-  // "extends": "@plinth/typescript-config/node.json",
+  "extends": "@stylobate/typescript-config/nextjs.json",
+  // "extends": "@stylobate/typescript-config/react.json",
+  // "extends": "@stylobate/typescript-config/react-library.json",
+  // "extends": "@stylobate/typescript-config/vue.json",
+  // "extends": "@stylobate/typescript-config/nuxt.json",
+  // "extends": "@stylobate/typescript-config/node.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": { "@/*": ["./src/*"] },
@@ -83,18 +83,18 @@ export default config;
 
 ```json
 {
-  "prettier": "@plinth/prettier-config"
+  "prettier": "@stylobate/prettier-config"
 }
 ```
 
-Tailwind 项目改成 `@plinth/prettier-config-tailwind`。
+Tailwind 项目改成 `@stylobate/prettier-config-tailwind`。
 
 ### 2.4 Commitlint + Husky（可选）
 
 `commitlint.config.mjs`：
 
 ```js
-export default { extends: ['@plinth/commitlint-config'] };
+export default { extends: ['@stylobate/commitlint-config'] };
 ```
 
 `package.json` 里加：
@@ -166,17 +166,17 @@ cp .env.example .env.local
 
 ### 运行时校验（推荐）
 
-用 [`@plinth/env`](../packages/env/README.md) 在启动时校验 env，缺失或非法值直接抛错，避免线上裸奔。
+用 [`@stylobate/env`](../packages/env/README.md) 在启动时校验 env，缺失或非法值直接抛错，避免线上裸奔。
 
 ```bash
-pnpm add @plinth/env zod
+pnpm add @stylobate/env zod
 ```
 
 ```ts
 // src/lib/env.ts （Next.js 示例）
 import { z } from 'zod';
 
-import { createEnv } from '@plinth/env';
+import { createEnv } from '@stylobate/env';
 
 export const env = createEnv({
   server: z.object({
@@ -191,7 +191,7 @@ export const env = createEnv({
 
 Vite/Vue 项目把 `clientPrefix` 改为 `'VITE_'`，并把 `source` 改为 `import.meta.env`。
 
-服务端 schema 中的变量在浏览器侧自动置 `undefined`，不会泄露。详见 [@plinth/env README](../packages/env/README.md)。
+服务端 schema 中的变量在浏览器侧自动置 `undefined`，不会泄露。详见 [@stylobate/env README](../packages/env/README.md)。
 
 模板参考：
 
@@ -203,7 +203,7 @@ Vite/Vue 项目把 `clientPrefix` 改为 `'VITE_'`，并把 `source` 改为 `imp
 ## 常见问题
 
 **Q: 想升级配置版本？**
-A: `pnpm up @plinth/eslint-config@latest`。所有 `@plinth/*` 都遵循 semver，看 [plinth releases](https://github.com/quentin-lian/plinth/releases) 了解破坏性变更。
+A: `pnpm up @stylobate/eslint-config@latest`。所有 `@stylobate/*` 都遵循 semver，看 [plinth releases](https://github.com/quentin-lian/plinth/releases) 了解破坏性变更。
 
-**Q: CI 装不上 `@plinth/*`？**
-A: `@plinth/*` 是 **npm 公开 registry** 的 public 包，任何 CI 环境直接 `pnpm install` 即可，不需要 token / `.npmrc`。如果你的 CI 配了内网镜像，确认那个镜像同步了 npm 公开 registry（一般都同步）。
+**Q: CI 装不上 `@stylobate/*`？**
+A: `@stylobate/*` 是 **npm 公开 registry** 的 public 包，任何 CI 环境直接 `pnpm install` 即可，不需要 token / `.npmrc`。如果你的 CI 配了内网镜像，确认那个镜像同步了 npm 公开 registry（一般都同步）。

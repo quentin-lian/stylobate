@@ -1,8 +1,8 @@
 ---
-'@plinth/env': minor
+'@stylobate/env': minor
 ---
 
-新增 `@plinth/env`：基于 zod 的运行时环境变量校验工具。
+新增 `@stylobate/env`：基于 zod 的运行时环境变量校验工具。
 
 - `createEnv({ server, client, clientPrefix, source, isServer })` 校验启动时的 env 配置
 - 服务端 schema 中的字段在浏览器侧自动置 undefined，避免误用泄露密钥

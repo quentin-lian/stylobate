@@ -1,3 +1,3 @@
-import config from '@plinth/test-config/vitest-react';
+import config from '@stylobate/test-config/vitest-react';
 
 export default config;

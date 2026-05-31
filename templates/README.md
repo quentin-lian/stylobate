@@ -1,6 +1,6 @@
-# @plinth Project Templates
+# @stylobate Project Templates
 
-业务工程起手式模板集合。每个模板都已预接 `@plinth/*` 配置包（eslint / prettier / typescript / test-config），开箱即用。
+业务工程起手式模板集合。每个模板都已预接 `@stylobate/*` 配置包（eslint / prettier / typescript / test-config），开箱即用。
 
 ## 可用模板
 
@@ -26,7 +26,7 @@ pnpm install
 pnpm dev
 ```
 
-> `@plinth/*` 是 npm 公开 registry 的 public 包，无需配置 `.npmrc` / token。
+> `@stylobate/*` 是 npm 公开 registry 的 public 包，无需配置 `.npmrc` / token。
 
 > 完整接入指南：[docs/CONSUMING.md](../docs/CONSUMING.md)
 
@@ -34,5 +34,5 @@ pnpm dev
 
 - 模板包标记 `"private": true`，不会被 changesets 发布
 - `.changeset/config.json` 的 `ignore` 列表已包含全部模板
-- 模板内部依赖 `@plinth/*` 使用 `workspace:*`，业务工程拷贝出去后改成 `^x.y.z`
+- 模板内部依赖 `@stylobate/*` 使用 `workspace:*`，业务工程拷贝出去后改成 `^x.y.z`
 - 模板示例代码保持**最小可用**：一个页面 + 一个 smoke 测试，避免业务逻辑入侵

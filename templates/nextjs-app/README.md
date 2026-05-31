@@ -1,11 +1,11 @@
-# @plinth/template-nextjs-app
+# @stylobate/template-nextjs-app
 
 公司 Next.js 16 起手式模板，预接：
 
-- `@plinth/eslint-config/next` — ESLint v9 flat config
-- `@plinth/prettier-config` — 含 import 排序
-- `@plinth/typescript-config/nextjs.json` — TS 5 严格模式
-- `@plinth/test-config/vitest-react` — Vitest + jsdom + Testing Library
+- `@stylobate/eslint-config/next` — ESLint v9 flat config
+- `@stylobate/prettier-config` — 含 import 排序
+- `@stylobate/typescript-config/nextjs.json` — TS 5 严格模式
+- `@stylobate/test-config/vitest-react` — Vitest + jsdom + Testing Library
 - React 19 + Next 16 App Router
 
 ## 复用方式
@@ -25,7 +25,7 @@ pnpm install
 pnpm dev   # http://localhost:3100
 ```
 
-> `@plinth/*` 是 npm 公开 registry 的 public 包，无需配置 `.npmrc` / token。
+> `@stylobate/*` 是 npm 公开 registry 的 public 包，无需配置 `.npmrc` / token。
 
 > 详细的"业务工程接入指南"见仓库 [docs/CONSUMING.md](../../docs/CONSUMING.md)。
 
@@ -36,9 +36,9 @@ app/
   layout.tsx       # 根布局
   page.tsx         # 首页
   page.test.tsx    # 示例测试（vitest + RTL + jest-dom）
-eslint.config.js   # 仅 import @plinth/eslint-config/next
-tsconfig.json      # extends @plinth/typescript-config/nextjs.json
-vitest.config.ts   # import @plinth/test-config/vitest-react
+eslint.config.js   # 仅 import @stylobate/eslint-config/next
+tsconfig.json      # extends @stylobate/typescript-config/nextjs.json
+vitest.config.ts   # import @stylobate/test-config/vitest-react
 vitest.d.ts        # jest-dom matcher 类型扩展
 ```
 

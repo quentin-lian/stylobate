@@ -1,5 +1,5 @@
 {
-  "extends": "@plinth/typescript-config/base.json",
+  "extends": "@stylobate/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",

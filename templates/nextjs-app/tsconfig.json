@@ -1,5 +1,5 @@
 {
-  "extends": "@plinth/typescript-config/nextjs.json",
+  "extends": "@stylobate/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {

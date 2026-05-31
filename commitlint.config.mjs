@@ -1,1 +1,1 @@
-export default { extends: ['@plinth/commitlint-config'] };
+export default { extends: ['@stylobate/commitlint-config'] };

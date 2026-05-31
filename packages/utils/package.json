@@ -1,5 +1,5 @@
 {
-  "name": "@plinth/utils",
+  "name": "@stylobate/utils",
   "version": "0.0.0",
   "description": "通用工具函数集合：debounce/throttle、retry、storage、url、wait/sleep、result 类型等业务高频复用的轻量工具。",
   "license": "MIT",
@@ -27,9 +27,9 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@plinth/eslint-config": "workspace:*",
-    "@plinth/test-config": "workspace:*",
-    "@plinth/typescript-config": "workspace:*",
+    "@stylobate/eslint-config": "workspace:*",
+    "@stylobate/test-config": "workspace:*",
+    "@stylobate/typescript-config": "workspace:*",
     "@types/node": "^22",
     "@vitest/coverage-v8": "^4",
     "eslint": "^9.39.1",

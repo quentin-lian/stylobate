@@ -1,6 +1,6 @@
 # plinth
 
-公司前端基础设施仓库。承载一组 `@plinth/*` 共享配置包，提供给所有业务前端项目（React / Vue）使用，确保整个组织的代码风格、类型、测试、提交、发布流水线统一。
+公司前端基础设施仓库。承载一组 `@stylobate/*` 共享配置包，提供给所有业务前端项目（React / Vue）使用，确保整个组织的代码风格、类型、测试、提交、发布流水线统一。
 
 > 当前迭代阶段与未来计划见 [docs/ROADMAP.md](./docs/ROADMAP.md)。
 
@@ -10,7 +10,7 @@
 
 ```
 plinth/
-├── packages/                    可发布的 @plinth/* 共享配置
+├── packages/                    可发布的 @stylobate/* 共享配置
 │   ├── eslint-config/           ESLint 9 flat config（base/react/next/vue/node）
 │   ├── prettier-config/         Prettier 3 + 导入排序
 │   ├── prettier-config-tailwind/  Prettier + Tailwind class 排序
@@ -68,7 +68,7 @@ pnpm changeset
 
 ## 业务项目如何接入
 
-去看 [docs/CONSUMING.md](./docs/CONSUMING.md)，按 5 步即可把 `@plinth/*` 接到任意业务项目里。
+去看 [docs/CONSUMING.md](./docs/CONSUMING.md)，按 5 步即可把 `@stylobate/*` 接到任意业务项目里。
 
 ---
 

@@ -44,7 +44,7 @@
 
 **目标**：消除当前阻塞，让 B 阶段彻底干净。
 
-- [x] 修复 Vue 模板 lint warning：在 `@plinth/eslint-config` Vue preset 中接入 `eslint-config-prettier`，关掉 `vue/max-attributes-per-line` 与 `vue/singleline-html-element-content-newline`
+- [x] 修复 Vue 模板 lint warning：在 `@stylobate/eslint-config` Vue preset 中接入 `eslint-config-prettier`，关掉 `vue/max-attributes-per-line` 与 `vue/singleline-html-element-content-newline`
 - [x] 统一分支策略：默认分支 `main`，CI workflows / changesets baseBranch 全部对齐
 - [x] 决定 `apps/web` `apps/docs` 去留：删除（推荐，模板已覆盖）或改造为可发布的演示站
 - [x] 替换根 [README.md](../README.md) 内容（目前仍是 `create-turbo` 默认文案）
@@ -55,11 +55,11 @@
 
 ### Phase 1 — 端到端发布验证（1–2 天）
 
-**目标**：跑通 `@plinth/*` 从源码到业务项目的完整链路，证明流水线可用。
+**目标**：跑通 `@stylobate/*` 从源码到业务项目的完整链路，证明流水线可用。
 
-- [x] 仓库 `quentin-lian/plinth` 已建好；scope `@plinth` 全量替换完成
+- [x] 仓库 `quentin-lian/plinth` 已建好；scope `@stylobate` 全量替换完成
 - [x] 切换到 npm 公开 registry（`access: public`），无需 GitHub Packages PAT
-- [ ] 在 npm 注册账号，确认 `@plinth` scope 未被占用并申明
+- [ ] 在 npm 注册账号，确认 `@stylobate` scope 未被占用并申明
 - [ ] 在仓库 `Settings → Secrets → Actions` 添加 `NPM_TOKEN`（npm Automation token）
 - [ ] `git push origin main` 把所有提交推到 GitHub，CI 跑绿
 - [ ] 首次发布走 changesets 流水线：合入 Release PR → CI 自动 `pnpm release`，9 个包到 npm 公开 registry
@@ -91,7 +91,7 @@
 #### 2.3 环境变量规范
 
 - [x] 模板新增 `.env.example`
-- [x] 引入 `@plinth/env`：基于 zod 的运行时 env schema 校验
+- [x] 引入 `@stylobate/env`：基于 zod 的运行时 env schema 校验
 
 **产出**：业务项目从"接入"到"长期维护"的协作链路自动化。
 
@@ -105,29 +105,29 @@
 
 #### 3.1 共享工具层（先做，门槛低、收益直接）
 
-- [x] `@plinth/utils` — 通用工具函数（date、url、storage、debounce、retry）
-- [x] `@plinth/api-client` — 基于 fetch 的 HTTP 客户端（鉴权、拦截、错误码、重试、取消）
-- [ ] `@plinth/icons` — 图标库（SVG sprite + tree-shaking）
+- [x] `@stylobate/utils` — 通用工具函数（date、url、storage、debounce、retry）
+- [x] `@stylobate/api-client` — 基于 fetch 的 HTTP 客户端（鉴权、拦截、错误码、重试、取消）
+- [ ] `@stylobate/icons` — 图标库（SVG sprite + tree-shaking）
 
 #### 3.2 共享 UI（React 优先，Vue 跟进）
 
-- [ ] `@plinth/ui-react` — 原子组件库（Button / Input / Modal / Toast / Form…）
+- [ ] `@stylobate/ui-react` — 原子组件库（Button / Input / Modal / Toast / Form…）
   - [ ] Storybook 7 接入
   - [ ] design tokens（CSS variables）
   - [ ] a11y（axe-core）
   - [ ] 主题切换
-- [ ] `@plinth/ui-vue` — Vue 版（结构对齐 React 版）
+- [ ] `@stylobate/ui-vue` — Vue 版（结构对齐 React 版）
 
 #### 3.3 监控与可观测
 
-- [ ] `@plinth/monitor` — 错误监控 SDK 封装（Sentry 或自建）
-- [ ] `@plinth/analytics` — 埋点 SDK 封装
+- [ ] `@stylobate/monitor` — 错误监控 SDK 封装（Sentry 或自建）
+- [ ] `@stylobate/analytics` — 埋点 SDK 封装
 
 #### 3.4 国际化
 
-- [ ] `@plinth/i18n` — i18n 方案约定（i18next / vue-i18n 包装、翻译 key 提取脚本）
+- [ ] `@stylobate/i18n` — i18n 方案约定（i18next / vue-i18n 包装、翻译 key 提取脚本）
 
-**产出**：业务项目核心代码 30%–50% 来自 `@plinth/*`，新项目启动时间从周降到小时。
+**产出**：业务项目核心代码 30%–50% 来自 `@stylobate/*`，新项目启动时间从周降到小时。
 
 ---
 
@@ -151,9 +151,9 @@
 
 #### 4.3 Codemod / 迁移工具
 
-- [ ] `@plinth/codemod` — 跨业务项目批量迁移（依赖升级、API 改名）
+- [ ] `@stylobate/codemod` — 跨业务项目批量迁移（依赖升级、API 改名）
 
-**产出**：新项目 `pnpm create @plinth/app` 一行命令拉起；性能/包体回归自动拦截。
+**产出**：新项目 `pnpm create @stylobate/app` 一行命令拉起；性能/包体回归自动拦截。
 
 ---
 
@@ -161,7 +161,7 @@
 
 **目标**：把 10 个业务项目的"工程健康度"汇聚到一个看板。
 
-- [ ] **版本基线巡检**：定时扫描业务项目使用的 `@plinth/*` 版本，落后超 N 个 minor 自动开 issue
+- [ ] **版本基线巡检**：定时扫描业务项目使用的 `@stylobate/*` 版本，落后超 N 个 minor 自动开 issue
 - [ ] **配置漂移检测**：业务项目本地是否覆盖了共享 ESLint / TS 规则，超阈值告警
 - [ ] **工程指标看板**：聚合各项目的构建时长、产物大小、测试覆盖率、依赖漏洞数
 - [ ] **文档站**：把 CONSUMING / ROADMAP / 各包 README / Storybook 聚合成一个 docs site（VitePress 或 Nextra）
@@ -186,9 +186,9 @@
 
 ### 风险点
 
-- **共享 UI 是双刃剑**：抽得太早会被业务定制需求撕裂。建议**先用 3+ 真实场景验证**再下沉到 `@plinth/ui`。
+- **共享 UI 是双刃剑**：抽得太早会被业务定制需求撕裂。建议**先用 3+ 真实场景验证**再下沉到 `@stylobate/ui`。
 - **npm 公开 registry**：业务方安装慢、CI token 管理是长期痛点，需要在 CONSUMING.md 持续完善。
-- **版本治理**：`@plinth/*` 频繁 major 会让业务方升级疲劳，需要严格遵守 semver 并准备 codemod。
+- **版本治理**：`@stylobate/*` 频繁 major 会让业务方升级疲劳，需要严格遵守 semver 并准备 codemod。
 
 ---
 
@@ -202,20 +202,20 @@
 | B-02 | 统一分支策略为 main                               | 0    | 0.5h |
 | B-03 | 删除 apps/web 与 apps/docs                        | 0    | 0.5h |
 | B-04 | 重写根 README                                     | 0    | 1h   |
-| A-01 | 首次发布 @plinth/\* 到 npm 公开 registry          | 1    | 0.5d |
+| A-01 | 首次发布 @stylobate/\* 到 npm 公开 registry       | 1    | 0.5d |
 | A-02 | 试点业务项目端到端接入                            | 1    | 1d   |
 | C-01 | PR / Issue / CODEOWNERS / CONTRIBUTING / SECURITY | 2    | 0.5d |
 | C-02 | Renovate 配置                                     | 2    | 0.5d |
-| C-03 | @plinth/env（zod env schema）                     | 2    | 1d   |
-| D-01 | @plinth/utils 第一版                              | 3    | 2d   |
-| D-02 | @plinth/api-client 第一版                         | 3    | 3d   |
-| D-03 | @plinth/ui-react + Storybook 第一版               | 3    | 5d   |
+| C-03 | @stylobate/env（zod env schema）                  | 2    | 1d   |
+| D-01 | @stylobate/utils 第一版                           | 3    | 2d   |
+| D-02 | @stylobate/api-client 第一版                      | 3    | 3d   |
+| D-03 | @stylobate/ui-react + Storybook 第一版            | 3    | 5d   |
 
 ---
 
 ## 五、参考与约定
 
-- **scope 名**：`@plinth`
+- **scope 名**：`@stylobate`
 - **包管理器**：pnpm 10+
 - **registry**：npm 公开 registry
 - **分支策略**：trunk-based（main 为发布分支，feature 分支短生命周期）

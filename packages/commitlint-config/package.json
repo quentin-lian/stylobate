@@ -1,5 +1,5 @@
 {
-  "name": "@plinth/commitlint-config",
+  "name": "@stylobate/commitlint-config",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",

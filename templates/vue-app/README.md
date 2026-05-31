@@ -1,11 +1,11 @@
-# @plinth/template-vue-app
+# @stylobate/template-vue-app
 
 公司 Vue 3 + Vite 起手式模板，预接：
 
-- `@plinth/eslint-config/vue` — Vue flat/recommended + type-aware 规则
-- `@plinth/prettier-config` — 含 import 排序
-- `@plinth/typescript-config/vue.json` — TS 5 严格 + Vite client types
-- `@plinth/test-config/vitest-vue` — Vitest + jsdom + @testing-library/vue
+- `@stylobate/eslint-config/vue` — Vue flat/recommended + type-aware 规则
+- `@stylobate/prettier-config` — 含 import 排序
+- `@stylobate/typescript-config/vue.json` — TS 5 严格 + Vite client types
+- `@stylobate/test-config/vitest-vue` — Vitest + jsdom + @testing-library/vue
 - Vue 3.5 + Vite 7 + vue-tsc
 
 ## 复用方式
@@ -23,7 +23,7 @@ pnpm install
 pnpm dev   # http://localhost:3200
 ```
 
-> `@plinth/*` 是 npm 公开 registry 的 public 包，无需配置 `.npmrc` / token。
+> `@stylobate/*` 是 npm 公开 registry 的 public 包，无需配置 `.npmrc` / token。
 
 > 详细的"业务工程接入指南"见仓库 [docs/CONSUMING.md](../../docs/CONSUMING.md)。
 
@@ -36,10 +36,10 @@ src/
   App.test.ts      # 示例测试（vitest + @testing-library/vue + jest-dom）
   env.d.ts         # vite/client + *.vue 类型声明
   main.ts          # 应用入口
-eslint.config.js   # 仅 import @plinth/eslint-config/vue
-tsconfig.json      # extends @plinth/typescript-config/vue.json
+eslint.config.js   # 仅 import @stylobate/eslint-config/vue
+tsconfig.json      # extends @stylobate/typescript-config/vue.json
 vite.config.ts     # Vite + @ → src alias
-vitest.config.ts   # 在 @plinth/test-config/vitest-vue 之上加 alias
+vitest.config.ts   # 在 @stylobate/test-config/vitest-vue 之上加 alias
 vitest.d.ts        # jest-dom matcher 类型扩展
 ```
 

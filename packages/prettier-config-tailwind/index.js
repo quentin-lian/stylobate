@@ -1,4 +1,4 @@
-import base from '@plinth/prettier-config';
+import base from '@stylobate/prettier-config';
 
 /** @type {import("prettier").Config} */
 export default {

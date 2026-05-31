@@ -1,4 +1,4 @@
-# `@plinth/prettier-config`
+# `@stylobate/prettier-config`
 
 Monorepo 共享的 Prettier 配置。统一代码风格 + 统一 import 排序。
 
@@ -6,7 +6,7 @@ Monorepo 共享的 Prettier 配置。统一代码风格 + 统一 import 排序�
 
 - 单引号、`semi: true`、`trailingComma: 'all'`
 - `printWidth: 100`、`tabWidth: 2`、`endOfLine: 'lf'`
-- 内置 [`@ianvs/prettier-plugin-sort-imports`](https://github.com/IanVS/prettier-plugin-sort-imports)，按"内置 / 三方 / `@plinth/` / 相对路径"分组
+- 内置 [`@ianvs/prettier-plugin-sort-imports`](https://github.com/IanVS/prettier-plugin-sort-imports)，按"内置 / 三方 / `@stylobate/` / 相对路径"分组
 
 ## 使用
 
@@ -14,7 +14,7 @@ Monorepo 共享的 Prettier 配置。统一代码风格 + 统一 import 排序�
 
 ```json
 {
-  "prettier": "@plinth/prettier-config"
+  "prettier": "@stylobate/prettier-config"
 }
 ```
 
@@ -23,17 +23,17 @@ Monorepo 共享的 Prettier 配置。统一代码风格 + 统一 import 排序�
 ## 安装
 
 ```bash
-pnpm add -D prettier @plinth/prettier-config
+pnpm add -D prettier @stylobate/prettier-config
 ```
 
-> Tailwind 项目请改用 [`@plinth/prettier-config-tailwind`](../prettier-config-tailwind)。
+> Tailwind 项目请改用 [`@stylobate/prettier-config-tailwind`](../prettier-config-tailwind)。
 
 ## 覆盖某些规则
 
 要扩展或覆盖单个项目，写一份 `prettier.config.js`：
 
 ```js
-import base from '@plinth/prettier-config';
+import base from '@stylobate/prettier-config';
 
 export default {
   ...base,

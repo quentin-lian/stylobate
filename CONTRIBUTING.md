@@ -2,7 +2,7 @@
 
 感谢你愿意为 `plinth` 贡献代码 / 文档 / 反馈。本文说明本仓库的工作流，目标是让任何成员都能在 30 分钟内提交第一个 PR。
 
-> 你只是要把 `@plinth/*` 接入业务项目？请直接看 [docs/CONSUMING.md](./docs/CONSUMING.md)，本文档不适合你。
+> 你只是要把 `@stylobate/*` 接入业务项目？请直接看 [docs/CONSUMING.md](./docs/CONSUMING.md)，本文档不适合你。
 
 ---
 
@@ -35,8 +35,8 @@ pnpm test           # 全 workspace vitest
 pnpm build          # 全 workspace 构建（如有）
 
 # 调试单个包
-pnpm --filter @plinth/eslint-config build
-pnpm --filter @plinth/template-vue-app dev
+pnpm --filter @stylobate/eslint-config build
+pnpm --filter @stylobate/template-vue-app dev
 ```
 
 ---
@@ -147,7 +147,7 @@ pnpm install   # 重新跑 prepare
 ls .husky/     # 确认 commit-msg、pre-commit 存在
 ```
 
-### 找不到 `@plinth/xxx`
+### 找不到 `@stylobate/xxx`
 
 workspace 内是 symlink，运行 `pnpm install` 即可。
 
