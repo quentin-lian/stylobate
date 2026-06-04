@@ -1,0 +1,71 @@
+{
+  "name": "@stylobate/icons",
+  "version": "0.0.0",
+  "description": "基于 Lucide 的图标库，支持 React 与 Vue，可扩展自定义 SVG 图标。",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js"
+    },
+    "./vue": {
+      "types": "./dist/vue/index.d.ts",
+      "import": "./dist/vue/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "generate": "tsx scripts/generate-lucide-exports.ts",
+    "generate:custom": "tsx scripts/generate-custom-icons.ts",
+    "prebuild": "pnpm generate && pnpm generate:custom",
+    "build": "tsc -p tsconfig.react.json && tsc -p tsconfig.vue.json",
+    "dev": "tsc -p tsconfig.react.json --watch",
+    "lint": "eslint --max-warnings 0 src",
+    "check-types": "tsc -p tsconfig.react.json --noEmit && tsc -p tsconfig.vue.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "lucide-react": "^0.511.0",
+    "lucide-vue-next": "^0.511.0"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "vue": "^3.3"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@stylobate/eslint-config": "workspace:*",
+    "@stylobate/test-config": "workspace:*",
+    "@stylobate/typescript-config": "workspace:*",
+    "@svgr/core": "^8",
+    "@svgr/plugin-svgo": "^8",
+    "@svgr/plugin-jsx": "^8",
+    "@testing-library/react": "^16",
+    "@testing-library/vue": "^8",
+    "@types/react": "^19",
+    "@vitest/coverage-v8": "^4",
+    "eslint": "^9.39.1",
+    "react": "^19",
+    "react-dom": "^19",
+    "tsx": "^4",
+    "typescript": "5.9.2",
+    "vitest": "^4",
+    "vue": "^3.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
