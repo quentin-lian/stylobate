@@ -22,7 +22,7 @@
   "scripts": {
     "generate": "tsx scripts/generate-lucide-exports.ts",
     "generate:custom": "tsx scripts/generate-custom-icons.ts",
-    "prebuild": "pnpm generate && pnpm generate:custom",
+    "prebuild": "pnpm generate && pnpm generate:custom && prettier --write src/react src/vue",
     "build": "tsc -p tsconfig.react.json && tsc -p tsconfig.vue.json",
     "dev": "tsc -p tsconfig.react.json --watch",
     "lint": "eslint --max-warnings 0 src",
