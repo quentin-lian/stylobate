@@ -1,0 +1,37 @@
+{
+  "name": "@stylobate/ui-react-cli",
+  "version": "0.0.0",
+  "description": "CLI 工具：初始化 @stylobate/ui-react 组件库并按需添加组件到项目。",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "stylobate-ui": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint --max-warnings 0 src",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "commander": "^13",
+    "chalk": "^5",
+    "prompts": "^2"
+  },
+  "devDependencies": {
+    "@stylobate/eslint-config": "workspace:*",
+    "@stylobate/typescript-config": "workspace:*",
+    "@types/node": "^22",
+    "@types/prompts": "^2",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

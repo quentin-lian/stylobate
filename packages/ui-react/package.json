@@ -1,0 +1,69 @@
+{
+  "name": "@stylobate/ui-react",
+  "version": "0.0.0",
+  "description": "React UI 组件库：Radix UI + Tailwind CSS，shadcn 风格，支持 copy-paste 分发与直接 import。",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./globals.css": "./src/styles/globals.css"
+  },
+  "files": [
+    "dist",
+    "src",
+    "registry.json",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint --max-warnings 0 src",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.0"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8",
+    "@storybook/addon-essentials": "^8",
+    "@storybook/react-vite": "^8",
+    "@stylobate/eslint-config": "workspace:*",
+    "@stylobate/test-config": "workspace:*",
+    "@stylobate/typescript-config": "workspace:*",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^4",
+    "eslint": "^9.39.1",
+    "react": "^19",
+    "react-dom": "^19",
+    "storybook": "^8",
+    "tailwindcss": "^4",
+    "typescript": "5.9.2",
+    "vitest": "^4",
+    "vitest-axe": "^0.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

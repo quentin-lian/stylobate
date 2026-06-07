@@ -1,0 +1,12 @@
+{
+  "components": {
+    "button": {
+      "name": "button",
+      "files": ["components/button/button.tsx", "components/button/index.ts"],
+      "dependencies": ["@radix-ui/react-slot"],
+      "registryDependencies": [],
+      "utilities": ["lib/cn.ts"],
+      "styles": ["styles/globals.css"]
+    }
+  }
+}
