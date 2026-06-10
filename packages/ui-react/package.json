@@ -1,6 +1,6 @@
 {
   "name": "@stylobate/ui-react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "React UI 组件库：Radix UI + Tailwind CSS，shadcn 风格，支持 copy-paste 分发与直接 import。",
   "license": "MIT",
   "type": "module",

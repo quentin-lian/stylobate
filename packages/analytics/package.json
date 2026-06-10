@@ -1,6 +1,6 @@
 {
   "name": "@stylobate/analytics",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "平台无关的埋点 SDK 抽象层：adapter 模式、事件队列、批量发送。",
   "license": "MIT",
   "type": "module",

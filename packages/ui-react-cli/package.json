@@ -1,6 +1,6 @@
 {
   "name": "@stylobate/ui-react-cli",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "CLI 工具：初始化 @stylobate/ui-react 组件库并按需添加组件到项目。",
   "license": "MIT",
   "type": "module",
