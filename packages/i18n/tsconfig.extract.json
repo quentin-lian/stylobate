@@ -1,0 +1,13 @@
+{
+  "extends": "@stylobate/typescript-config/node.json",
+  "compilerOptions": {
+    "outDir": "./dist/extract",
+    "rootDir": "./src/extract",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noEmit": false
+  },
+  "include": ["src/extract/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "@stylobate/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "./dist/vue",
+    "rootDir": "./src/vue",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noEmit": false,
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
+  },
+  "include": ["src/vue/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+}
