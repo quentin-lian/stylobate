@@ -1,0 +1,58 @@
+{
+  "name": "@stylobate/monitor",
+  "version": "0.0.0",
+  "description": "Sentry 错误监控封装：统一初始化、标准化上下文、可测试的模块注入。",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint --max-warnings 0 src",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "@sentry/node": ">=8",
+    "@sentry/browser": ">=8",
+    "@sentry/nextjs": ">=8"
+  },
+  "peerDependenciesMeta": {
+    "@sentry/node": {
+      "optional": true
+    },
+    "@sentry/browser": {
+      "optional": true
+    },
+    "@sentry/nextjs": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@sentry/node": "^9",
+    "@stylobate/eslint-config": "workspace:*",
+    "@stylobate/test-config": "workspace:*",
+    "@stylobate/typescript-config": "workspace:*",
+    "@types/node": "^22",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.2",
+    "vitest": "^4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

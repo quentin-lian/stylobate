@@ -1,0 +1,41 @@
+{
+  "name": "@stylobate/analytics",
+  "version": "0.0.0",
+  "description": "平台无关的埋点 SDK 抽象层：adapter 模式、事件队列、批量发送。",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint --max-warnings 0 src",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@stylobate/eslint-config": "workspace:*",
+    "@stylobate/test-config": "workspace:*",
+    "@stylobate/typescript-config": "workspace:*",
+    "@types/node": "^22",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.2",
+    "vitest": "^4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
