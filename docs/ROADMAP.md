@@ -107,21 +107,22 @@
 
 - [x] `@stylobate/utils` — 通用工具函数（date、url、storage、debounce、retry）
 - [x] `@stylobate/api-client` — 基于 fetch 的 HTTP 客户端（鉴权、拦截、错误码、重试、取消）
-- [ ] `@stylobate/icons` — 图标库（SVG sprite + tree-shaking）
+- [x] `@stylobate/icons` — 图标库（Lucide re-exports + 自定义 SVG codegen，React + Vue 双框架）
 
 #### 3.2 共享 UI（React 优先，Vue 跟进）
 
-- [ ] `@stylobate/ui-react` — 原子组件库（Button / Input / Modal / Toast / Form…）
-  - [ ] Storybook 7 接入
-  - [ ] design tokens（CSS variables）
-  - [ ] a11y（axe-core）
+- [x] `@stylobate/ui-react` — 原子组件库（Radix UI + Tailwind CSS v4，Button / IconButton / ButtonGroup）
+  - [ ] Storybook 8 接入（待 Vite 8 兼容）
+  - [x] design tokens（CSS variables，light/dark）
+  - [x] a11y（vitest-axe）
   - [ ] 主题切换
+- [x] `@stylobate/ui-react-cli` — CLI 工具（init + add，shadcn 风格 copy-paste）
 - [ ] `@stylobate/ui-vue` — Vue 版（结构对齐 React 版）
 
 #### 3.3 监控与可观测
 
-- [ ] `@stylobate/monitor` — 错误监控 SDK 封装（Sentry 或自建）
-- [ ] `@stylobate/analytics` — 埋点 SDK 封装
+- [x] `@stylobate/monitor` — 错误监控 SDK 封装（Sentry wrapper，模块注入便于测试）
+- [x] `@stylobate/analytics` — 埋点 SDK 封装（adapter 模式，内置 ConsoleAdapter，事件队列 + 批量发送）
 
 #### 3.4 国际化
 
