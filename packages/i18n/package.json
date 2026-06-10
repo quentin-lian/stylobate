@@ -1,6 +1,6 @@
 {
   "name": "@stylobate/i18n",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "国际化方案：基于 i18next 的薄封装，React/Vue 双框架绑定，翻译 key 提取脚本。",
   "license": "MIT",
   "type": "module",

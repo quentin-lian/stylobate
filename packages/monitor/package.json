@@ -1,6 +1,6 @@
 {
   "name": "@stylobate/monitor",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Sentry 错误监控封装：统一初始化、标准化上下文、可测试的模块注入。",
   "license": "MIT",
   "type": "module",

@@ -1,6 +1,6 @@
 {
   "name": "@stylobate/icons",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "基于 Lucide 的图标库，支持 React 与 Vue，可扩展自定义 SVG 图标。",
   "license": "MIT",
   "type": "module",
