@@ -126,7 +126,7 @@
 
 #### 3.4 国际化
 
-- [ ] `@stylobate/i18n` — i18n 方案约定（i18next / vue-i18n 包装、翻译 key 提取脚本）
+- [x] `@stylobate/i18n` — i18n 方案约定（i18next / vue-i18n 双框架绑定、翻译 key 提取 CLI）
 
 **产出**：业务项目核心代码 30%–50% 来自 `@stylobate/*`，新项目启动时间从周降到小时。
 
